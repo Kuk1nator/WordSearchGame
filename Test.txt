@@ -1,0 +1,108 @@
+Test #1
+Test Name: Basic Correct Guessing (Word: APPLE)
+Description: The player correctly identifies coordinates for the word APPLE, placed horizontally.
+Preconditions:
+    1. data/words1.txt contains APPLE (and optionally other fruits).
+    2. The game is started, and APPLE is visibly placed horizontally in the grid (e.g., at row 5).
+Steps:
+    1. Input: 5,2,5,6 (Assuming APPLE starts at row 5, col 2 and goes to col 6)
+    2. Expected Output: "Correct! Word found." message displayed. The "Words left" count decreases by 1.
+Expected Result:
+    The game continues.
+    The found word (APPLE) is added to the list of found words (if you implement a "show" feature).
+Test Result: (Pass / Fail)
+Comments:
+
+---
+
+Test #2
+Test Name: Incorrect Guess (Invalid Coordinates)
+Description: The player enters coordinates that do not correspond to a word in the grid.
+Preconditions:
+    1. The game is started with a visible grid.
+Steps:
+    1. Input: 1,1,1,2 (Coordinates that are known to not contain a word)
+    2. Expected Output: "Incorrect. Try again." message displayed.
+Expected Result:
+    The game continues.
+    The "Words left" count remains unchanged.
+Test Result: (Pass / Fail)
+Comments:
+
+---
+
+Test #3
+Test Name: Partial Correct Word (but wrong End Coordinates)
+Description: The player enters coordinates that start correctly, but end incorrectly.
+Preconditions:
+    1. The game is started and a word (e.g., BANANA at 0,1,0,6) is visible.
+Steps:
+    1. Input: 0,1,0,3 (Correct start, wrong end)
+    2. Expected Output: "Incorrect. Try again." message displayed.
+Expected Result:
+    The game continues.
+    The "Words left" count remains unchanged.
+Test Result: (Pass / Fail)
+Comments:
+
+---
+
+Test #4
+Test Name: Coordinate Out of Bounds
+Description: The player enters coordinates that are outside the bounds of the grid.
+Preconditions:
+    1. Grid size is set to 15.
+Steps:
+    1. Input: 16,0,16,5
+    2. Expected Output: "Invalid input: Coordinates are out of bounds." message displayed.
+Expected Result:
+    The game continues.
+Test Result: (Pass / Fail)
+Comments:
+
+---
+
+Test #5
+Test Name: Winning the Game (Finding All Words)
+Description: The player finds all the words hidden in the grid.
+Preconditions:
+    1. The grid is populated with words.
+    2. The player knows the correct coordinates for all words.
+Steps:
+    1. Input: [Enter the correct coordinates for each word, one by one]
+    2. Expected Output: "Correct! Word found." for each correct input. The "Words left" count decreases with each word found.
+Expected Result:
+    The game ends.
+    The message "Congratulations! You found all the words!" is displayed.
+Test Result: (Pass / Fail)
+Comments: This test may need to be customized based on the generated word list.
+
+---
+
+Test #6
+Test Name: Quitting the Game
+Description: The player quits the game using the "quit" command.
+Preconditions:
+    1. The game is running.
+Steps:
+    1. Input: quit
+    2. Expected Output: "Quitting the game." message displayed.
+Expected Result:
+    The game terminates.
+Test Result: (Pass / Fail)
+Comments:
+
+---
+
+Test #7
+Test Name: New Game Command
+Description: The player starts a new game using the "new" command.
+Preconditions:
+    1. The game is running.
+Steps:
+    1. Input: new
+    2. Expected Output: "Starting a new game." message is displayed. A new game grid is generated and displayed.
+Expected Result:
+    The game continues with a new grid and the original word set.
+Test Result: (Pass / Fail)
+Comments:
