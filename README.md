@@ -38,4 +38,3 @@ A simple Java-based word search game. The program generates a grid of letters an
     *   Type `new` to start a new game with the same word set.
     *   Type `show` to display the list of found and remaining words.
 
-## Project Structure
